@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/e18cheng.github.io/static/css/main.a617e044.chunk.css",
-    "main.js": "/e18cheng.github.io/static/js/main.40e9404c.chunk.js",
-    "main.js.map": "/e18cheng.github.io/static/js/main.40e9404c.chunk.js.map",
-    "runtime-main.js": "/e18cheng.github.io/static/js/runtime-main.b076cfe8.js",
-    "runtime-main.js.map": "/e18cheng.github.io/static/js/runtime-main.b076cfe8.js.map",
-    "static/js/2.fcb5ed22.chunk.js": "/e18cheng.github.io/static/js/2.fcb5ed22.chunk.js",
-    "static/js/2.fcb5ed22.chunk.js.map": "/e18cheng.github.io/static/js/2.fcb5ed22.chunk.js.map",
-    "static/js/3.e5c4fda8.chunk.js": "/e18cheng.github.io/static/js/3.e5c4fda8.chunk.js",
-    "static/js/3.e5c4fda8.chunk.js.map": "/e18cheng.github.io/static/js/3.e5c4fda8.chunk.js.map",
-    "index.html": "/e18cheng.github.io/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/e18cheng.github.io/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.fcb5ed22.chunk.js.LICENSE.txt": "/e18cheng.github.io/static/js/2.fcb5ed22.chunk.js.LICENSE.txt"
+    "main.css": "/tftcomplearner/static/css/main.a617e044.chunk.css",
+    "main.js": "/tftcomplearner/static/js/main.40e9404c.chunk.js",
+    "main.js.map": "/tftcomplearner/static/js/main.40e9404c.chunk.js.map",
+    "runtime-main.js": "/tftcomplearner/static/js/runtime-main.3348f691.js",
+    "runtime-main.js.map": "/tftcomplearner/static/js/runtime-main.3348f691.js.map",
+    "static/js/2.fcb5ed22.chunk.js": "/tftcomplearner/static/js/2.fcb5ed22.chunk.js",
+    "static/js/2.fcb5ed22.chunk.js.map": "/tftcomplearner/static/js/2.fcb5ed22.chunk.js.map",
+    "static/js/3.e5c4fda8.chunk.js": "/tftcomplearner/static/js/3.e5c4fda8.chunk.js",
+    "static/js/3.e5c4fda8.chunk.js.map": "/tftcomplearner/static/js/3.e5c4fda8.chunk.js.map",
+    "index.html": "/tftcomplearner/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/tftcomplearner/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.fcb5ed22.chunk.js.LICENSE.txt": "/tftcomplearner/static/js/2.fcb5ed22.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.b076cfe8.js",
+    "static/js/runtime-main.3348f691.js",
     "static/js/2.fcb5ed22.chunk.js",
     "static/css/main.a617e044.chunk.css",
     "static/js/main.40e9404c.chunk.js"
