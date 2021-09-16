@@ -1,17 +1,7 @@
 import "./App.css";
 
 import React from "react";
-
-const comps = [
-  "Lucian",
-  "Kayle",
-  "Rangers",
-  "Nocturne",
-  "Fortnite Jax",
-  "Abom + X",
-  "Draven",
-  "Vayne Reroll",
-];
+import * as Constants from "./constants.js";
 
 class Composition extends React.Component {
   constructor(props) {
@@ -28,7 +18,10 @@ class Composition extends React.Component {
           <button
             onClick={() =>
               this.setState({
-                value: comps[Math.floor(Math.random() * comps.length)],
+                value:
+                  Constants.MetaComps[
+                    Math.floor(Math.random() * Constants.MetaComps.length)
+                  ],
               })
             }
           >
@@ -43,11 +36,34 @@ class Composition extends React.Component {
   }
 }
 
+class ChampionSelector extends React.Component {
+  render() {
+    return (
+      <>
+        {Constants.ChampionData.map((champion, i) => {
+          return (
+            <img
+              src={
+                process.env.PUBLIC_URL +
+                "/champions/TFT5_" +
+                champion.name.replace(/\s/g, "") +
+                ".png"
+              }
+              alt={champion.name}
+            />
+          );
+        })}
+      </>
+    );
+  }
+}
+
 function App() {
   return (
     <div>
       <h1>TFT Comps</h1>
       <Composition />
+      <ChampionSelector />
     </div>
   );
 }
