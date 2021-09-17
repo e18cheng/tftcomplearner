@@ -37,10 +37,46 @@ class Composition extends React.Component {
 }
 
 class ChampionSelector extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      top: [],
+      bottom: [],
+    };
+
+    Constants.ChampionData.forEach((champion) => {
+      this.state.top.push(champion);
+    });
+  }
+
   render() {
+    const topClick = (champion) => {
+      var index = this.state.top.indexOf(champion);
+      if (index !== -1) {
+        this.setState({
+          top: this.state.top.filter(function (c) {
+            return c !== champion;
+          }),
+        });
+        this.setState({ bottom: [...this.state.bottom, champion] });
+      }
+    };
+
+    const botClick = (champion) => {
+      var index = this.state.bottom.indexOf(champion);
+      if (index !== -1) {
+        this.setState({
+          bottom: this.state.bottom.filter(function (c) {
+            return c !== champion;
+          }),
+        });
+        this.setState({ top: [...this.state.top, champion] });
+      }
+    };
+
     return (
       <>
-        {Constants.ChampionData.map((champion, i) => {
+        {this.state.top.map((champion, i) => {
           return (
             <img
               src={
@@ -49,6 +85,24 @@ class ChampionSelector extends React.Component {
                 champion.name.replace(/\s/g, "") +
                 ".png"
               }
+              onClick={() => topClick(champion)}
+              style={{ cursor: "pointer", width: 75, height: 75 }}
+              alt={champion.name}
+            />
+          );
+        })}
+        <hr></hr>
+        {this.state.bottom.map((champion, i) => {
+          return (
+            <img
+              src={
+                process.env.PUBLIC_URL +
+                "/champions/TFT5_" +
+                champion.name.replace(/\s/g, "") +
+                ".png"
+              }
+              onClick={() => botClick(champion)}
+              style={{ cursor: "pointer", width: 75, height: 75 }}
               alt={champion.name}
             />
           );
