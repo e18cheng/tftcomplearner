@@ -51,13 +51,8 @@ class ChampionSelector extends React.Component {
 
   render() {
     const topClick = (champion) => {
-      var index = this.state.top.indexOf(champion);
-      if (index !== -1) {
-        this.setState({
-          top: this.state.top.filter(function (c) {
-            return c !== champion;
-          }),
-        });
+      var index = this.state.bottom.indexOf(champion);
+      if (index === -1) {
         this.setState({ bottom: [...this.state.bottom, champion] });
       }
     };
@@ -70,7 +65,6 @@ class ChampionSelector extends React.Component {
             return c !== champion;
           }),
         });
-        this.setState({ top: [...this.state.top, champion] });
       }
     };
 
