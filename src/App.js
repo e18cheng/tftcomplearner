@@ -45,26 +45,25 @@ class ChampionSelector extends React.Component {
     };
 
     Constants.ChampionData.forEach((champion) => {
-      this.state.top.push(champion);
+      this.state.bottom.push(champion);
     });
   }
 
   render() {
     const topClick = (champion) => {
-      var index = this.state.bottom.indexOf(champion);
-      if (index === -1) {
-        this.setState({ bottom: [...this.state.bottom, champion] });
-      }
-    };
-
-    const botClick = (champion) => {
-      var index = this.state.bottom.indexOf(champion);
+      var index = this.state.top.indexOf(champion);
       if (index !== -1) {
         this.setState({
-          bottom: this.state.bottom.filter(function (c) {
+          top: this.state.top.filter(function (c) {
             return c !== champion;
           }),
         });
+      }
+    };
+    const botClick = (champion) => {
+      var index = this.state.top.indexOf(champion);
+      if (index === -1) {
+        this.setState({ top: [...this.state.top, champion] });
       }
     };
 
