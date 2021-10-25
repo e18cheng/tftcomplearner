@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/tftcomplearner/static/css/main.a617e044.chunk.css",
-    "main.js": "/tftcomplearner/static/js/main.3c49b6d1.chunk.js",
-    "main.js.map": "/tftcomplearner/static/js/main.3c49b6d1.chunk.js.map",
+    "main.js": "/tftcomplearner/static/js/main.784394c7.chunk.js",
+    "main.js.map": "/tftcomplearner/static/js/main.784394c7.chunk.js.map",
     "runtime-main.js": "/tftcomplearner/static/js/runtime-main.5f6407ac.js",
     "runtime-main.js.map": "/tftcomplearner/static/js/runtime-main.5f6407ac.js.map",
-    "static/js/2.b5120753.chunk.js": "/tftcomplearner/static/js/2.b5120753.chunk.js",
-    "static/js/2.b5120753.chunk.js.map": "/tftcomplearner/static/js/2.b5120753.chunk.js.map",
+    "static/js/2.9e2a4bbd.chunk.js": "/tftcomplearner/static/js/2.9e2a4bbd.chunk.js",
+    "static/js/2.9e2a4bbd.chunk.js.map": "/tftcomplearner/static/js/2.9e2a4bbd.chunk.js.map",
     "static/js/3.479c0887.chunk.js": "/tftcomplearner/static/js/3.479c0887.chunk.js",
     "static/js/3.479c0887.chunk.js.map": "/tftcomplearner/static/js/3.479c0887.chunk.js.map",
     "index.html": "/tftcomplearner/index.html",
     "static/css/main.a617e044.chunk.css.map": "/tftcomplearner/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.b5120753.chunk.js.LICENSE.txt": "/tftcomplearner/static/js/2.b5120753.chunk.js.LICENSE.txt"
+    "static/js/2.9e2a4bbd.chunk.js.LICENSE.txt": "/tftcomplearner/static/js/2.9e2a4bbd.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5f6407ac.js",
-    "static/js/2.b5120753.chunk.js",
+    "static/js/2.9e2a4bbd.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.3c49b6d1.chunk.js"
+    "static/js/main.784394c7.chunk.js"
   ]
 }
