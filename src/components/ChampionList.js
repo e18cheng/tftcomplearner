@@ -1,10 +1,6 @@
 import React from "react";
 
 export class ChampionList extends React.Component {
-    champListClick = (champion) => {
-      this.props.sendChampListClick(champion);
-    };
-  
     render() {
       return (
         <>
@@ -17,7 +13,7 @@ export class ChampionList extends React.Component {
                   champion.name.replace(/\s/g, "") +
                   ".png"
                 }
-                onClick={() => this.champListClick(champion)}
+                onClick={() => this.props.champListClick(champion)}
                 style={{ cursor: "pointer", width: 75, height: 75 }}
                 alt={champion.name}
               />

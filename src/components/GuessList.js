@@ -1,10 +1,6 @@
 import React from "react";
 
 export class GuessList extends React.Component {
-    guessListClick = (champion) => {
-      this.props.sendGuessListClick(champion);
-    };
-  
     render() {
       return (
         <>
@@ -17,7 +13,7 @@ export class GuessList extends React.Component {
                   champion.name.replace(/\s/g, "") +
                   ".png"
                 }
-                onClick={() => this.guessListClick(champion)}
+                onClick={() => this.props.guessListClick(champion)}
                 style={{ cursor: "pointer", width: 75, height: 75 }}
                 alt={champion.name}
               />

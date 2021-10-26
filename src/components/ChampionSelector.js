@@ -7,9 +7,6 @@ import { GuessList } from "./GuessList.js";
 export class ChampionSelector extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      top: [],
-    };
 
     this.champList = [];
     Constants.ChampionData.forEach((champion) => {
@@ -17,20 +14,16 @@ export class ChampionSelector extends React.Component {
     });
   }
   getChampListClick = (champion) => {
-    var index = this.state.top.indexOf(champion);
+    var index = this.props.guess.indexOf(champion);
     if (index === -1) {
-      this.setState({ top: [...this.state.top, champion] });
+      this.props.addGuessList(champion);
     }
   };
 
   getGuessListClick = (champion) => {
-    var index = this.state.top.indexOf(champion);
+    var index = this.props.guess.indexOf(champion);
     if (index !== -1) {
-      this.setState({
-        top: this.state.top.filter(function (c) {
-          return c !== champion;
-        }),
-      });
+      this.props.removeGuessList(champion);
     }
   };
 
@@ -38,13 +31,13 @@ export class ChampionSelector extends React.Component {
     return (
       <>
         <GuessList
-          top={this.state.top}
-          sendGuessListClick={this.getGuessListClick.bind(this)}
+          top={this.props.guess}
+          guessListClick={this.getGuessListClick}
         />
         <hr></hr>
         <ChampionList
           champList={this.champList}
-          sendChampListClick={this.getChampListClick.bind(this)}
+          champListClick={this.getChampListClick}
         />
       </>
     );

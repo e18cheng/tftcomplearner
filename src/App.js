@@ -12,6 +12,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       comp: null,
+      guess: [],
     };
   }
 
@@ -23,16 +24,36 @@ class App extends React.Component {
     });
   };
 
+  getAddGuessList = (champion) => {
+    this.setState({ guess: [...this.state.guess, champion] });
+  };
+
+  getRemoveGuessList = (champion) => {
+    this.setState({
+      guess: this.state.guess.filter(function (c) {
+        return c !== champion;
+      }),
+    });
+  };
+
   render() {
     return (
       <div>
         <h1>TFT Comps</h1>
         <Composition
-          sendCompClick={this.getCompClick.bind(this)}
+          sendCompClick={this.getCompClick}
           comp={this.state.comp}
         />
-        <ChampionSelector />
-        <CheckAnswer />
+        <ChampionSelector
+          addGuessList={this.getAddGuessList}
+          removeGuessList={this.getRemoveGuessList}
+          guess={this.state.guess}
+        />
+        <hr></hr>
+        <CheckAnswer 
+          comp={this.state.comp}
+          guess={this.state.guess}
+        />
       </div>
     );
   }
