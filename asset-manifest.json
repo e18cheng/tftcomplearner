@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/tftcomplearner/static/css/main.a617e044.chunk.css",
-    "main.js": "/tftcomplearner/static/js/main.784394c7.chunk.js",
-    "main.js.map": "/tftcomplearner/static/js/main.784394c7.chunk.js.map",
+    "main.js": "/tftcomplearner/static/js/main.2b886448.chunk.js",
+    "main.js.map": "/tftcomplearner/static/js/main.2b886448.chunk.js.map",
     "runtime-main.js": "/tftcomplearner/static/js/runtime-main.5f6407ac.js",
     "runtime-main.js.map": "/tftcomplearner/static/js/runtime-main.5f6407ac.js.map",
     "static/js/2.9e2a4bbd.chunk.js": "/tftcomplearner/static/js/2.9e2a4bbd.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.5f6407ac.js",
     "static/js/2.9e2a4bbd.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.784394c7.chunk.js"
+    "static/js/main.2b886448.chunk.js"
   ]
 }
