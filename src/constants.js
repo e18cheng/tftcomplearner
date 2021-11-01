@@ -3,7 +3,7 @@ export const ChampionData = require("./tft_data/champions.json");
 export var MetaComps = {
   Rangers: [
     "Lulu",
-    "Fiddle",
+    "Fiddlesticks",
     "Volibear",
     "Ivern",
     "Teemo",
@@ -14,7 +14,7 @@ export var MetaComps = {
   "Abom + X": [
     "Brand",
     "Nunu",
-    "Fiddle",
+    "Fiddlesticks",
     "Volibear",
     "Ivern",
     "Syndra",
