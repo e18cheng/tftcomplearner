@@ -1,12 +1,64 @@
-export const ChampionData = require("./tft_data/champions.json")
+export const ChampionData = require("./tft_data/champions.json");
 
-export const MetaComps = [
-    "Lucian",
+export var MetaComps = {
+  Rangers: [
+    "Lulu",
+    "Fiddle",
+    "Volibear",
+    "Ivern",
+    "Teemo",
+    "Diana",
+    "Aphelios",
+    "Akshan",
+  ],
+  "Abom + X": [
+    "Brand",
+    "Nunu",
+    "Fiddle",
+    "Volibear",
+    "Ivern",
+    "Syndra",
+    "Velkoz",
+    "Lux",
+  ],
+  Draven: [
     "Kayle",
-    "Rangers",
-    "Nocturne",
-    "Fortnite Jax",
-    "Abom + X",
+    "Irelia",
+    "Riven",
     "Draven",
-    "Vayne Reroll",
-  ]
+    "Viego",
+    "Diana",
+    "Galio",
+    "Rell",
+  ],
+  Lucian: [
+    "Lucian",
+    "Pyke",
+    "Senna",
+    "Akshan",
+    "Rakan",
+    "Galio",
+    "Ivern",
+    "Volibear",
+  ],
+  Yasuo: [
+    "Yasuo",
+    "Irelia",
+    "Lee Sin",
+    "Diana",
+    "Sejuani",
+    "Rell",
+    "Jax",
+    "Nautilus",
+  ],
+  "Fortnite Jax": [
+    "Garen",
+    "Galio",
+    "Thresh",
+    "Nautilus",
+    "Rell",
+    "Jax",
+    "Irelia",
+    "Olaf",
+  ],
+};

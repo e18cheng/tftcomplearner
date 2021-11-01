@@ -13,15 +13,22 @@ class App extends React.Component {
     this.state = {
       comp: null,
       guess: [],
+      correct: [],
+      incorrect_extra: [],
+      incorrect_missed: [],
     };
   }
 
   getCompClick = () => {
+    const keys = Object.keys(Constants.MetaComps)
     this.setState({
-      comp: Constants.MetaComps[
-        Math.floor(Math.random() * Constants.MetaComps.length)
+      comp: keys[
+        Math.floor(Math.random() * keys.length)
       ],
     });
+    this.setState({ correct: [] });
+    this.setState({ incorrect_extra: [] });
+    this.setState({ incorrect_missed: [] });
   };
 
   getAddGuessList = (champion) => {
@@ -34,6 +41,35 @@ class App extends React.Component {
         return c !== champion;
       }),
     });
+  };
+
+  getAnswerClick = () => {
+    if(this.state.comp == null) {
+      return;
+    }
+    const answerNames = Constants.MetaComps[this.state.comp].sort();
+
+    const correct = [];
+    const incorrect_extra = [];
+    const incorrect_missed = [];
+    
+    this.state.guess.forEach((champion) => {
+      if (answerNames.includes(champion.name)) {
+        correct.push(champion.name);
+      } else {
+        incorrect_extra.push(champion.name);
+      }
+    });
+
+    answerNames.forEach((champion) => {
+      if (!correct.includes(champion)) {
+        incorrect_missed.push(champion);
+      }
+    });
+    
+    this.setState({ correct: correct });
+    this.setState({ incorrect_extra: incorrect_extra });
+    this.setState({ incorrect_missed: incorrect_missed });
   };
 
   render() {
@@ -51,8 +87,10 @@ class App extends React.Component {
         />
         <hr></hr>
         <CheckAnswer 
-          comp={this.state.comp}
-          guess={this.state.guess}
+          sendAnswerClick={this.getAnswerClick}
+          correct={this.state.correct}
+          incorrect_extra={this.state.incorrect_extra}
+          incorrect_missed={this.state.incorrect_missed}
         />
       </div>
     );
