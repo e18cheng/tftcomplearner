@@ -62,3 +62,8 @@ export var MetaComps = {
     "Olaf",
   ],
 };
+
+export const champList = [];
+ChampionData.forEach((champion) => {
+  champList.push(champion);
+});

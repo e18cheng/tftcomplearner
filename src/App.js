@@ -1,59 +1,52 @@
 import "./App.css";
 
-import React from "react";
+import React, { useState } from "react";
 import * as Constants from "./constants.js";
 
 import { Composition } from "./components/Composition.js";
 import { ChampionSelector } from "./components/ChampionSelector.js";
 import { CheckAnswer } from "./components/CheckAnswer.js";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      comp: null,
-      guess: [],
-      correct: [],
-      incorrect_extra: [],
-      incorrect_missed: [],
-    };
-  }
+function App(props) {
+  const [comp, setComp] = useState();
+  const [guess, setGuess] = useState([]);
+  const [correct, setCorrect] = useState([]);
+  const [incorrectExtra, setIncorrectExtra] = useState([]);
+  const [incorrectMissed, setIncorrectMissed] = useState([]);
 
-  getCompClick = () => {
-    const keys = Object.keys(Constants.MetaComps)
-    this.setState({
-      comp: keys[
-        Math.floor(Math.random() * keys.length)
-      ],
-    });
-    this.setState({ correct: [] });
-    this.setState({ incorrect_extra: [] });
-    this.setState({ incorrect_missed: [] });
+  const onCompClick = () => {
+    const keys = Object.keys(Constants.MetaComps);
+
+    setComp(keys[Math.floor(Math.random() * keys.length)]);
+
+    setCorrect([]);
+    setIncorrectExtra([]);
+    setIncorrectMissed([]);
   };
 
-  getAddGuessList = (champion) => {
-    this.setState({ guess: [...this.state.guess, champion] });
+  const addGuessList = (champion) => {
+    setGuess([...guess, champion]);
   };
 
-  getRemoveGuessList = (champion) => {
-    this.setState({
-      guess: this.state.guess.filter(function (c) {
+  const removeGuessList = (champion) => {
+    setGuess(
+      guess.filter((c) => {
         return c !== champion;
-      }),
-    });
+      })
+    );
   };
 
-  getAnswerClick = () => {
-    if(this.state.comp == null) {
+  const checkAnswerClick = () => {
+    if (comp == null) {
       return;
     }
-    const answerNames = Constants.MetaComps[this.state.comp].sort();
+    const answerNames = Constants.MetaComps[comp].sort();
 
     const correct = [];
     const incorrect_extra = [];
     const incorrect_missed = [];
-    
-    this.state.guess.forEach((champion) => {
+
+    guess.forEach((champion) => {
       if (answerNames.includes(champion.name)) {
         correct.push(champion.name);
       } else {
@@ -66,35 +59,30 @@ class App extends React.Component {
         incorrect_missed.push(champion);
       }
     });
-    
-    this.setState({ correct: correct });
-    this.setState({ incorrect_extra: incorrect_extra });
-    this.setState({ incorrect_missed: incorrect_missed });
+
+    setCorrect(correct);
+    setIncorrectExtra(incorrect_extra);
+    setIncorrectMissed(incorrect_missed);
   };
 
-  render() {
-    return (
-      <div>
-        <h1>TFT Comps</h1>
-        <Composition
-          sendCompClick={this.getCompClick}
-          comp={this.state.comp}
-        />
-        <ChampionSelector
-          addGuessList={this.getAddGuessList}
-          removeGuessList={this.getRemoveGuessList}
-          guess={this.state.guess}
-        />
-        <hr></hr>
-        <CheckAnswer 
-          sendAnswerClick={this.getAnswerClick}
-          correct={this.state.correct}
-          incorrect_extra={this.state.incorrect_extra}
-          incorrect_missed={this.state.incorrect_missed}
-        />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h1>TFT Comps</h1>
+      <Composition onCompClick={onCompClick} comp={comp} />
+      <ChampionSelector
+        addGuessList={addGuessList}
+        removeGuessList={removeGuessList}
+        guess={guess}
+      />
+      <hr></hr>
+      <CheckAnswer
+        checkAnswerClick={checkAnswerClick}
+        correct={correct}
+        incorrectExtra={incorrectExtra}
+        incorrectMissed={incorrectMissed}
+      />
+    </div>
+  );
 }
 
 export default App;

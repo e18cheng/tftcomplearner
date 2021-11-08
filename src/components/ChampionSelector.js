@@ -1,45 +1,30 @@
 import React from "react";
 
-import * as Constants from "../constants.js";
 import { ChampionList } from "./ChampionList.js";
 import { GuessList } from "./GuessList.js";
 
-export class ChampionSelector extends React.Component {
-  constructor(props) {
-    super(props);
+export function ChampionSelector(props) {
+  const { addGuessList, removeGuessList, guess } = props;
 
-    this.champList = [];
-    Constants.ChampionData.forEach((champion) => {
-      this.champList.push(champion);
-    });
-  }
-  getChampListClick = (champion) => {
-    var index = this.props.guess.indexOf(champion);
+  const champListClick = (champion) => {
+    var index = guess.indexOf(champion);
     if (index === -1) {
-      this.props.addGuessList(champion);
+      addGuessList(champion);
     }
   };
 
-  getGuessListClick = (champion) => {
-    var index = this.props.guess.indexOf(champion);
+  const guessListClick = (champion) => {
+    var index = guess.indexOf(champion);
     if (index !== -1) {
-      this.props.removeGuessList(champion);
+      removeGuessList(champion);
     }
   };
 
-  render() {
-    return (
-      <>
-        <GuessList
-          top={this.props.guess}
-          guessListClick={this.getGuessListClick}
-        />
-        <hr></hr>
-        <ChampionList
-          champList={this.champList}
-          champListClick={this.getChampListClick}
-        />
-      </>
-    );
-  }
+  return (
+    <>
+      <GuessList guess={guess} guessListClick={guessListClick} />
+      <hr></hr>
+      <ChampionList champListClick={champListClick} />
+    </>
+  );
 }
